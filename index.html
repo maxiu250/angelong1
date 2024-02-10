@@ -117,8 +117,8 @@
 &amp;emsp;
 &amp;emsp;&amp;emsp;你现在才发现他已经比一般人还要高大，不再是你眼中的孩子。他已经成长到能够在你的眼皮底下保护了那么多人。他站在那里像一个被信徒围绕的神明，邀请你加入他的旅途。
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[摇头-&gt;野人5关闭]]
-(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[点头-&gt;野人5]]](else-if:$Yeren4 is 3)[&amp;emsp;&amp;emsp;$name失踪了，你不知道他在哪里，说实话这种情况已经出现了很多次了。就算你再迟钝现在也该明白$name已经离开了你的保护，他现在该自己面对所有选择。
-(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[继续-&gt;野人5关闭]]](else:)[]](else-if:$Yeren6 is  0)[&amp;emsp;&amp;emsp;自由的抉择剧情描写。
+(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[点头-&gt;野人5]]](else:)[&amp;emsp;&amp;emsp;$name失踪了，你不知道他在哪里，说实话这种情况已经出现了很多次了。就算你再迟钝现在也该明白$name已经离开了你的保护，他现在该自己面对所有选择。
+(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[继续-&gt;野人5关闭]]]](else-if:$Yeren6 is  0)[&amp;emsp;&amp;emsp;自由的抉择剧情描写。
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[随他去-&gt;野人6]]
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[赶他走-&gt;野人6关闭]]](else-if:$Yeren7 is  0)[&amp;emsp;&amp;emsp;避难所改造剧情描写。
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[扔掉-&gt;野人7关闭]]
@@ -219,6 +219,14 @@
 (if:$Tili &lt; 0)[(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[有什么事情发生了-&gt;事件跳转]]](else:)[(if:$BNSfood &lt;  1)[(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[出门寻找资源-&gt;觅食]]](else-if:$BNSbed is 0)[(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[出门寻找资源-&gt;觅食]]](else-if:$BNSclothes is 0)[(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[出门寻找资源-&gt;觅食]]](else:)[▶目前还不需要囤积资源]
 (if:$BNSfire &lt;  0)[(t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[建造篝火-&gt;篝火]]](else:)[▷现在已经有&lt;font color=#FF6A6A&gt;篝火&lt;/font&gt;了]
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[与孩子互动-&gt;互动]]]
+(set: $Yeren1 to 0)&lt;!-- 温泉事件 --&gt;✓
+(set: $Yeren2 to 0)&lt;!-- 逃亡奴隶 --&gt;✓
+(set: $Yeren3 to 0)&lt;!-- 战斗训练 --&gt;✓
+(set: $Yeren4 to 0)&lt;!-- 努凯里亚故事 --&gt;✓
+(set: $Yeren5 to 0)&lt;!-- 奴隶追随者 --&gt;
+(set: $Yeren6 to 0)&lt;!-- 自由的抉择 --&gt;
+(set: $Yeren7 to 0)&lt;!-- 避难所改造 --&gt;
+(set: $Yeren8 to 0)&lt;!-- 原体降临 --&gt;✓
 &#39;&#39;</tw-passagedata><tw-passagedata pid="15" name="建造篝火" tags="" position="225,1275" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
 &#39;&#39;
 &amp;emsp;&amp;emsp;你在山洞找到一些大小不一且形状各异的石头，在其中挑选了几块平整且坚固的石头，熟练地将垒成一个三角形的支架，最后你将找到的树枝放在支架上。
@@ -531,7 +539,7 @@
 &#39;&#39;
 (set: $Tili to 7)
 (set: $BNSfire to  $BNSfire -1)
-(set: $BNSfood to $BNSfood -1)</tw-passagedata><tw-passagedata pid="42" name="野人7" tags="" position="350,150" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
+(set: $BNSfood to $BNSfood -1)</tw-passagedata><tw-passagedata pid="42" name="野人7" tags="" position="350,25" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
 &#39;&#39;&amp;emsp;&amp;emsp;剧情描写
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[继续-&gt;山洞]]
 &#39;&#39;
@@ -543,7 +551,7 @@
 &#39;&#39;
 (set: $Tili to 7)
 (set: $BNSfire to  $BNSfire -1)
-(set: $BNSfood to $BNSfood -1)</tw-passagedata><tw-passagedata pid="44" name="野人8" tags="" position="350,25" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
+(set: $BNSfood to $BNSfood -1)</tw-passagedata><tw-passagedata pid="44" name="野人8" tags="" position="350,150" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
 &#39;&#39;&amp;emsp;&amp;emsp;剧情描写
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[继续-&gt;End03]]
 &#39;&#39;</tw-passagedata><tw-passagedata pid="45" name="野人线" tags="" position="600,900" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
@@ -584,7 +592,7 @@
 &amp;emsp;
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[逃跑-&gt;野人线]]
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[去看看-&gt;野兽线1]]
-&#39;&#39;</tw-passagedata><tw-passagedata pid="49" name="End03" tags="" position="550,125" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
+&#39;&#39;</tw-passagedata><tw-passagedata pid="49" name="End03" tags="" position="550,200" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
 &#39;&#39;
 &amp;emsp;&amp;emsp;很快，$name带着奴隶们起义了，不仅仅是角斗士，还有一大堆对你而言毫无用处的老弱病残。你像一道阴影一般呆在$name的身边，不言不语，不露悲欢。你不会给冲入陷阱的年幼领导者提出任何建议，也不会在胜利之后赞扬他。
 &amp;emsp;&amp;emsp;
@@ -598,7 +606,7 @@
 &amp;emsp;&lt;font color=red&gt;达成结局:潜伏的反抗者&lt;/font&gt;
 &amp;emsp;
 (t8n-depart:&quot;fade-up&quot;)+(t8n-arrive:&quot;fade-down&quot;)+(t8n-time:1s)[[听作者狡辩-&gt;狡辩]]
-&#39;&#39;</tw-passagedata><tw-passagedata pid="50" name="End04" tags="" position="550,250" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
+&#39;&#39;</tw-passagedata><tw-passagedata pid="50" name="End04" tags="" position="550,350" size="100,100">(enchant:?page,(text-colour:white)+(bg:black))
 &#39;&#39;
 &amp;emsp;&amp;emsp;很快，$name带着奴隶们起义了，不仅仅是角斗士，还有一大堆毫无用处的老弱病残。你还是呆在常年积雪的高山之中，但是由于战争，你不得不离开了洞穴前往凡人无法存活的山巅。原本山洞的冰柱早就被热熔武器熔毁，地面也被鲜血换了一遍颜色。
 &amp;emsp;&amp;emsp;
